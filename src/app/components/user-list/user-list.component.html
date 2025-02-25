@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>User Management</h2>
+  
+    <!-- Add User -->
+    <div>
+      <input [(ngModel)]="newUser.name" placeholder="Name">
+      <input [(ngModel)]="newUser.email" placeholder="Email">
+      <button (click)="addUser()">Add User</button>
+    </div>
+  
+    <!-- User List -->
+    <ul class="user-entry">
+      <li *ngFor="let user of users">
+        <span>{{ user.name }} - {{ user.email }}</span>
+        <div class="button-container">
+            <button (click)="editUser(user)">Edit</button>
+            <button (click)="deleteUser(user.id!)">Delete</button>
+          </div>
+      </li>
+    </ul>
+  
+    <!-- Edit User -->
+    <div *ngIf="editingUser">
+      <h3>Edit User</h3>
+      <input [(ngModel)]="editingUser.name">
+      <input [(ngModel)]="editingUser.email">
+      <button (click)="updateUser()">Update</button>
+      <button (click)="editingUser = null">Cancel</button>
+    </div>
+  </div>
+  
