@@ -26,6 +26,8 @@ The application is built using **Angular 17.3.12** with the **Standalone API app
 ## How to Run
 1. Install dependencies:
    ```sh
+   git clone <repo-url>
+   cd <repo>
    npm install
    ```
 2. Start the development server:
